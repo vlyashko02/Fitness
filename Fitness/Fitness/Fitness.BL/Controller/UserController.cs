@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Fitness.BL.Controller
@@ -59,12 +58,9 @@ namespace Fitness.BL.Controller
 
             using var fs = new FileStream("users.dat", FileMode.OpenOrCreate);
             {
-                if(fs.Length != 0)
+                if(fs.Length != 0 && formatter.Deserialize(fs) is List<User> users)
                 {
-                    if (formatter.Deserialize(fs) is List<User> users)
-                        return users;
-                    else
-                        return new List<User>();
+                    return users;
                 }
                 else
                 {

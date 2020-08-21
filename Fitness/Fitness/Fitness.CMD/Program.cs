@@ -1,7 +1,5 @@
 ﻿using Fitness.BL.Controller;
-using Fitness.BL.Model;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace Fitness.CMD
 {
@@ -10,7 +8,6 @@ namespace Fitness.CMD
         static void Main(string[] args)
         {
             Console.WriteLine("Вас приветствует приложение Fitness");
-            // TODO: Проверка на правильность ввода данных
 
             Console.Write("Введите имя пользователя: ");
             var name = Console.ReadLine();
@@ -30,7 +27,6 @@ namespace Fitness.CMD
                 userController.SetNewUserData(gender, birthDate, weight, height);
             }
             Console.WriteLine(userController.CurrentUser);
-            
         }
 
         private static DateTime DateTimeParse()
