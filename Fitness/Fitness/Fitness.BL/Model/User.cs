@@ -14,15 +14,15 @@ namespace Fitness.BL.Model
         /// <summary>
         /// Имя
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; set; }
         /// <summary>
         /// Пол
         /// </summary>
-        public Gender Gender { get; private set; }
+        public Gender Gender { get; set; }
         /// <summary>
         /// Дата рождения
         /// </summary>
-        public DateTime BirthDate { get; private set; }
+        public DateTime BirthDate { get; set; }
         /// <summary>
         /// Вес
         /// </summary>
@@ -31,6 +31,20 @@ namespace Fitness.BL.Model
         /// Рост
         /// </summary>
         public double Height { get; set; }
+        /// <summary>
+        /// Возраст
+        /// </summary>
+        public int Age
+        {
+            get
+            {
+                int year = DateTime.Now.Year - BirthDate.Year;
+                if  (DateTime.Now.Month < BirthDate.Month ||
+                    (DateTime.Now.Month == BirthDate.Month && 
+                     DateTime.Now.Day < BirthDate.Day)) year--;
+                return year;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -77,9 +91,19 @@ namespace Fitness.BL.Model
             Height = height;
         }
 
+        public User(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException("Имя пользователя не может быть пустым.", nameof(name));
+            }
+
+            Name = name;
+        }
+
         public override string ToString()
         {
-            return Name;
+            return Name + " " + Age;
         }
     }
 }
