@@ -10,7 +10,6 @@ C:\Users\User\Desktop\Sharp\Fitness\Fitness\Fitness.BL\obj\Debug\netcoreapp3.1\F
 C:\Users\User\Desktop\Sharp\Fitness.BL\bin\Debug\netcoreapp3.1\Fitness.BL.deps.json
 C:\Users\User\Desktop\Sharp\Fitness.BL\bin\Debug\netcoreapp3.1\Fitness.BL.dll
 C:\Users\User\Desktop\Sharp\Fitness.BL\bin\Debug\netcoreapp3.1\Fitness.BL.pdb
-C:\Users\User\Desktop\Sharp\Fitness.BL\obj\Debug\netcoreapp3.1\Fitness.BL.csprojAssemblyReference.cache
 C:\Users\User\Desktop\Sharp\Fitness.BL\obj\Debug\netcoreapp3.1\Fitness.BL.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Sharp\Fitness.BL\obj\Debug\netcoreapp3.1\Fitness.BL.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Sharp\Fitness.BL\obj\Debug\netcoreapp3.1\Fitness.BL.AssemblyInfo.cs

@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BeginDateExercise" xml:space="preserve">
+    <value>Введите время начала упражнения:</value>
+  </data>
   <data name="Calories" xml:space="preserve">
     <value>калорийность</value>
   </data>
   <data name="Carbs" xml:space="preserve">
     <value>углеводы</value>
+  </data>
+  <data name="ClickAnyButton" xml:space="preserve">
+    <value>Нажмите любую клавишу для выхода в меню</value>
+  </data>
+  <data name="CountCalories" xml:space="preserve">
+    <value>количество калорий в минуту</value>
+  </data>
+  <data name="EndDateExercise" xml:space="preserve">
+    <value>Введите время конца упражнения:</value>
   </data>
   <data name="Enter" xml:space="preserve">
     <value>Введите</value>
@@ -148,13 +160,37 @@
     <value>Вас приветствует приложение Fitness</value>
   </data>
   <data name="KeyCodeE" xml:space="preserve">
-    <value>Е - ввести прием пищи</value>
+    <value>У - ввести прием пищи</value>
+  </data>
+  <data name="KeyCodeEsc" xml:space="preserve">
+    <value>Esc - выйти из приложения</value>
+  </data>
+  <data name="KeyCodeF" xml:space="preserve">
+    <value>А - Вывести список упражнений</value>
+  </data>
+  <data name="KeyCodeG" xml:space="preserve">
+    <value>П - Вывести список еды</value>
+  </data>
+  <data name="KeyCodeR" xml:space="preserve">
+    <value>К - ввести упражнение</value>
+  </data>
+  <data name="ListActivities" xml:space="preserve">
+    <value>Список упражнений:</value>
+  </data>
+  <data name="ListFood" xml:space="preserve">
+    <value>Список еды:</value>
+  </data>
+  <data name="NameExercise" xml:space="preserve">
+    <value>Введите название упражнения:</value>
   </data>
   <data name="NameProduct" xml:space="preserve">
     <value>Введите имя продукта:</value>
   </data>
   <data name="Proteins" xml:space="preserve">
     <value>белки</value>
+  </data>
+  <data name="SumCalories" xml:space="preserve">
+    <value>потраченных калорий</value>
   </data>
   <data name="Weight" xml:space="preserve">
     <value>вес</value>

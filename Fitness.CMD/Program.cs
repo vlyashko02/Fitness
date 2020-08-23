@@ -41,12 +41,14 @@ namespace Fitness.CMD
 
             var userController = new UserController(name);
             var eatingController = new EatingController(userController.CurrentUser);
+            var exerciseController = new ExecriseController(userController.CurrentUser);
+
             if (userController.IsNewUser)
             {
                 Console.Write(resourceManager.GetString("EnterSex", culture) + " ");
                 var gender = Console.ReadLine();
 
-                DateTime birthDate = DateTimeParse();
+                DateTime birthDate = DateTimeParse("WriteDateBirth");
 
                 double weight = ParseDouble(resourceManager.GetString("Weight", culture));
 
@@ -55,21 +57,69 @@ namespace Fitness.CMD
                 userController.SetNewUserData(gender, birthDate, weight, height);
             }
             Console.WriteLine(userController.CurrentUser);
-
-            Console.WriteLine(resourceManager.GetString("WhatWannaDo", culture));
-            Console.WriteLine(resourceManager.GetString("KeyCodeE", culture));
-            key = Console.ReadKey();
-            Console.Clear();
-            if(key.Key == ConsoleKey.E)
+            while (true)
             {
-                var foods = EnterEating();
-                eatingController.Add(foods.food, foods.weight);
+                Console.Clear();
+                Console.WriteLine(resourceManager.GetString("WhatWannaDo", culture));
+                Console.WriteLine(resourceManager.GetString("KeyCodeE", culture));
+                Console.WriteLine(resourceManager.GetString("KeyCodeR", culture));
+                Console.WriteLine(resourceManager.GetString("KeyCodeG",culture));
+                Console.WriteLine(resourceManager.GetString("KeyCodeF", culture));
+                Console.WriteLine(resourceManager.GetString("KeyCodeEsc", culture));
 
-                foreach (var item in eatingController.Eating.Foods)
+                key = Console.ReadKey();
+                Console.Clear();
+                switch (key.Key)
                 {
-                    Console.WriteLine($"\t{item.Key} - {item.Value}");
+                    case ConsoleKey.E:
+                        var foods = EnterEating();
+                        eatingController.Add(foods.food, foods.weight);
+                        break;
+                    case ConsoleKey.R:
+                        var exe = EnterExercise();
+                        exerciseController.Add(exe.activity, exe.begin, exe.end);
+                        break;
+                    case ConsoleKey.F:
+                        Console.WriteLine(resourceManager.GetString("ListActivities", culture));
+                        foreach (var item in exerciseController.Execrises)
+                        {
+                            var k = item.Finish.Subtract(item.Start);
+                            Console.WriteLine($"{item.Activity} # {item.Start.TimeOfDay} - {item.Finish.TimeOfDay}, {(k.TotalSeconds / 60 + k.TotalMinutes + k.TotalHours * 60) * item.Activity.CaloriesPerMinute} {resourceManager.GetString("SumCalories", culture)}");
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine(resourceManager.GetString("ClickAnyButton", culture));
+                        Console.ReadLine();
+                        break;
+                    case ConsoleKey.G:
+                        Console.WriteLine(resourceManager.GetString("ListFood", culture));
+                        foreach (var item in eatingController.Eating.Foods)
+                        {
+                            Console.WriteLine($"{item.Key} - {item.Value}");
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine(resourceManager.GetString("ClickAnyButton", culture));
+                        Console.ReadLine();
+                        break;
+                    case ConsoleKey.Escape:
+                        Environment.Exit(0);
+                        break;
                 }
             }
+        }
+
+        private static (DateTime begin, DateTime end, Activity activity) EnterExercise()
+        {
+            Console.Write(resourceManager.GetString("NameExercise", culture) + " ");
+            var name = Console.ReadLine();
+
+            var energy = ParseDouble("CountCalories");
+
+            var activity = new Activity(name, energy);
+
+            var begin = DateTimeParse("BeginDateExercise");
+            var end = DateTimeParse("EndDateExercise");
+
+            return (begin, end, activity);
         }
 
         private static (Food food, double weight) EnterEating()
@@ -91,14 +141,13 @@ namespace Fitness.CMD
 
         }
 
-        private static DateTime DateTimeParse()
+        private static DateTime DateTimeParse(string value)
         {
-            DateTime birthDate;
             while (true)
             {
-                Console.Write(resourceManager.GetString("WriteDateBirth", culture) + " ");
-                if (DateTime.TryParse(Console.ReadLine(), out birthDate))
-                    return birthDate;
+                Console.Write(resourceManager.GetString($"{value}", culture) + " ");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime date))
+                    return date;
                 else
                     Console.WriteLine(resourceManager.GetString("FalseDate", culture));
             }
@@ -108,7 +157,7 @@ namespace Fitness.CMD
         {
             while (true)
             {
-                Console.Write(resourceManager.GetString("Enter", culture) + " " + name + ": ");
+                Console.Write(resourceManager.GetString("Enter", culture) + " " + resourceManager.GetString($"{name}", culture) + ": ");
                 if (double.TryParse(Console.ReadLine(), out double value))
                     return value;
                 else
