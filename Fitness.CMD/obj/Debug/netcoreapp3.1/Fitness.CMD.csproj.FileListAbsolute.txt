@@ -30,3 +30,11 @@ C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.dll
 C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.pdb
 C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.genruntimeconfig.cache
 C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.Languages.Messages.resources
+C:\Users\User\Desktop\Sharp\Fitness.CMD\bin\Debug\netcoreapp3.1\ru-ru\Fitness.CMD.resources.dll
+C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.Languages.Messages.ru-ru.resources
+C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\ru-ru\Fitness.CMD.resources.dll
+C:\Users\User\Desktop\Sharp\Fitness.CMD\bin\Debug\netcoreapp3.1\en-us\Fitness.CMD.resources.dll
+C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\Fitness.CMD.Languages.Messages.en-us.resources
+C:\Users\User\Desktop\Sharp\Fitness.CMD\obj\Debug\netcoreapp3.1\en-us\Fitness.CMD.resources.dll

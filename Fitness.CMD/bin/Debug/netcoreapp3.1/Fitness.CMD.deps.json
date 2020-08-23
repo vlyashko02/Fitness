@@ -13,6 +13,14 @@
         },
         "runtime": {
           "Fitness.CMD.dll": {}
+        },
+        "resources": {
+          "en-us/Fitness.CMD.resources.dll": {
+            "locale": "en-us"
+          },
+          "ru-ru/Fitness.CMD.resources.dll": {
+            "locale": "ru-ru"
+          }
         }
       },
       "System.ValueTuple/4.5.0": {},
